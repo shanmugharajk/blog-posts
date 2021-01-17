@@ -1,0 +1,38 @@
+@host=http://localhost:3000
+###
+
+# @name Posts
+GET {{host}}/posts HTTP/1.1
+
+###
+
+# @name FetchPostByID
+GET {{host}}/posts/1 HTTP/1.1
+
+###
+
+# @name NewPost
+POST {{host}}/posts HTTP/1.1
+content-type: application/json
+
+{
+  "title": "Rust Introduction",
+  "content": "Hello, world rust"
+}
+###
+
+# @name UpdatePost
+PUT {{host}}/posts/1 HTTP/1.1
+content-type: application/json
+
+{
+  "title": "ReactJS Hooks tutorial",
+  "content": "First create a new project with cli"
+}
+###
+
+# @name DeletePost
+DELETE {{host}}/posts/1 HTTP/1.1
+content-type: application/json
+
+###
